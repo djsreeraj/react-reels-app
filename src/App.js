@@ -1,42 +1,45 @@
-import './App.css';
-import VideoCard from './components/VideoCard';
+import { useEffect, useState } from "react";
+import "./App.css";
+import VideoCard from "./components/VideoCard";
+import db from "./firebase/firebase";
 
 function App() {
-  return (
+  const [reels, setReels] = useState([]);
 
+  useEffect(() => {
+    // App component will run once when it loads
+    db.collection("reels").onSnapshot((snapshot) =>
+      setReels(snapshot.docs.map((doc) => doc.data()))
+    );
+  }, []);
+
+  return (
     //BEM naming convention
     <div className="app">
       <div className="app__top">
-
-        <img 
-        className="app__logo"
-        src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/768px-Instagram_logo_2016.svg.png"
-        alt="ig reels"
+        <img
+          className="app__logo"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/768px-Instagram_logo_2016.svg.png"
+          alt="ig reels"
         />
 
-        <h1>  Reels</h1>
-
+        <h1> Insta_Reels</h1>
       </div>
 
       <div className="app__videos">
-
-        <VideoCard 
-          channel='sreerajmelath'
-          avatarSrc='https://avatars.githubusercontent.com/u/6124324?s=48&v=4'
-          song='original_music_uploaded by user'
-          url='https://www.sreerajmelath.com/bb/v1.mp4'
-          likeCount='950'
-          shareCount='230'
-        />
-        <VideoCard 
-          channel='sreerajmelath'
-          avatarSrc='https://avatars.githubusercontent.com/u/6124324?s=48&v=4'
-          song='original_music_uploaded by user'
-          url='https://www.sreerajmelath.com/bb/v2.mp4'
-          like='950'
-          shares='230'
-        />
-
+        {reels.map(
+          ({ channel, avatarSrc, url, song, likeCount, shareCount, id }) => (
+            <VideoCard
+              id={id}
+              channel={channel}
+              avatarSrc={avatarSrc}
+              song={song}
+              url={url}
+              likeCount={likeCount}
+              shareCount={shareCount}
+            />
+          )
+        )}
       </div>
     </div>
   );
