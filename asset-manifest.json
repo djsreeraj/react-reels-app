@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/insta-reels/static/css/main.10091208.chunk.css",
+    "main.js": "/insta-reels/static/js/main.fa7c7138.chunk.js",
+    "main.js.map": "/insta-reels/static/js/main.fa7c7138.chunk.js.map",
+    "runtime-main.js": "/insta-reels/static/js/runtime-main.3d530111.js",
+    "runtime-main.js.map": "/insta-reels/static/js/runtime-main.3d530111.js.map",
+    "static/js/2.e0d1416a.chunk.js": "/insta-reels/static/js/2.e0d1416a.chunk.js",
+    "static/js/2.e0d1416a.chunk.js.map": "/insta-reels/static/js/2.e0d1416a.chunk.js.map",
+    "static/js/3.6af405a9.chunk.js": "/insta-reels/static/js/3.6af405a9.chunk.js",
+    "static/js/3.6af405a9.chunk.js.map": "/insta-reels/static/js/3.6af405a9.chunk.js.map",
+    "index.html": "/insta-reels/index.html",
+    "static/css/main.10091208.chunk.css.map": "/insta-reels/static/css/main.10091208.chunk.css.map",
+    "static/js/2.e0d1416a.chunk.js.LICENSE.txt": "/insta-reels/static/js/2.e0d1416a.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3d530111.js",
+    "static/js/2.e0d1416a.chunk.js",
+    "static/css/main.10091208.chunk.css",
+    "static/js/main.fa7c7138.chunk.js"
+  ]
+}
